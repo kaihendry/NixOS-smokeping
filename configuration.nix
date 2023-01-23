@@ -1,16 +1,14 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
@@ -21,6 +19,7 @@
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "vnixos"; # Define your hostname.
+  networking.domain = "local";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -65,7 +64,7 @@
   users.users.hendry = {
     password = "hello";
     isNormalUser = true;
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       thunderbird
@@ -77,6 +76,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
+    tmate
     #   wget
   ];
 
@@ -114,4 +114,17 @@
 
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
+
+  networking.firewall.enable = false;
+
+  services.smokeping = {
+    #    package = pkgs.smokeping.overrideAttrs (_: {
+    #      src = OUR NEW SOURCE CODE!
+    #    });
+    package =
+      (builtins.getFlake "github:nixos/nixpkgs/e779fb4a661168a24db731e2e4fcd1d26c96985e").legacyPackages.x86_64-linux.smokeping;
+    enable = true;
+    port = 8081;
+    host = "192.168.1.40";
+  };
 }
