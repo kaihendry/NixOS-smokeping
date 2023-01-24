@@ -1,0 +1,110 @@
+probe = FPing
+
+menu = Top
+title = Network Latency Grapher
+remark = Welcome to Kai Hendry's SmokePing website
+
++ Singapore
+menu = Singapore
+title = Site we ping
+
+++ Thoughtworks
+title = Cross Street office
+menu = ThoughtworksSG
+host = 128.106.1.171
+
+++ NUS
+title = NUS mirror
+host = mirror.nus.edu.sg
+
+++ Wireless
+title = rasping.local
+menu = Wireless Pi 3
+host = 192.168.1.36
+
+++ Wired
+title = nuc
+menu = nuc
+host = 192.168.1.5
+
+++ WiredMBP
+title = mbp
+menu = hendry-tw-mbp
+host = 192.168.1.8
+
+++ OtherMBP
+title = sg-mbp
+menu = sg-mbp
+host = 192.168.1.9
+
+++ Ndoo
+title = Andrew Yong's
+host = mirror.0x.sg
+
+++ SuperInternet
+title = DNS server
+menu = SuperInternet DNS server
+host = 210.23.6.60
+
+++ AWS
+title = S3 ap-southeast-1
+host = s3.ap-southeast-1.amazonaws.com
+
++ Malaysia
+menu = Malaysia
+title = Malaysia Connectivity
+
+++ TM
+title = Petaling Jaya
+host = pj.dabase.com
+
++ UK
+menu = United Kingdom
+title = United Kingdom
+
+++ aa
+title = a&a
+host = ping.aa.net.uk
+
+++ webconverger
+title = gb.webconverger.com
+host = gb.webconverger.com
+
+++ Praze
+menu = Praze
+title = Praze Farm
+host = house.prazefarm.co.uk
+
++ DNS
+menu = DNS
+title = DNS
+
+++ GoogleDNS1
+menu = Google DNS 1
+title = Google DNS 8.8.8.8
+host = 8.8.8.8
+
+++ GoogleDNS2
+menu = Google DNS 2
+title = Google DNS 8.8.4.4
+host = 8.8.4.4
+
+++ OpenDNS1
+menu = OpenDNS1
+title = OpenDNS1
+host = 208.67.222.222
+
+++ OpenDNS2
+menu = OpenDNS2
+title = OpenDNS2
+host = 208.67.220.220
+
+++ CloudflareDNS1
+menu = Cloudflare DNS 1
+title = Cloudflare DNS 1.1.1.1
+host = 1.1.1.1
+
+++ CloudflareDNS2
+menu = Cloudflare DNS 2
+title = Cloudflare DNS 1.0.0.1
+host = 1.0.0.1
