@@ -21,7 +21,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
     git
     tmate
     ripgrep
@@ -39,5 +38,7 @@
   networking.firewall.enable = false; # we want smokeping httpd to be accessible
 
   system.copySystemConfiguration = true;
+
+  programs.vim.defaultEditor = true;
 
 }
