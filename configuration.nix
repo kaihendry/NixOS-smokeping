@@ -25,6 +25,8 @@
     git
     tmate
     ripgrep
+    fd
+    file
   ];
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -33,6 +35,9 @@
 
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
-  networking.firewall.enable = false;
+
+  networking.firewall.enable = false; # we want smokeping httpd to be accessible
+
+  system.copySystemConfiguration = true;
 
 }
