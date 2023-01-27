@@ -7,17 +7,31 @@
     ./smokeping.nix
   ];
 
+  system.stateVersion = "22.11";
+
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
   networking.hostName = "vnixos";
   networking.domain = "local";
+  networking.firewall.enable = false; # we want smokeping httpd to be accessible
 
-  users.users.hendry = {
-    password = "hello";
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
+  networking = {
+    useDHCP = false;
+    useNetworkd = true;
+  };
+
+  systemd.network = {
+    networks = {
+      "enp0s3" = {
+        name = "enp0s3";
+        DHCP = "ipv4";
+        networkConfig = {
+          MulticastDNS = true;
+        };
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -27,18 +41,15 @@
     fd
     file
   ];
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
-  system.stateVersion = "22.11";
-
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-
-  networking.firewall.enable = false; # we want smokeping httpd to be accessible
+  services =
+    {
+      openssh.enable = true;
+      resolved = {
+        enable = true;
+      };
+    };
 
   system.copySystemConfiguration = true;
-
   programs.vim.defaultEditor = true;
-
 }
