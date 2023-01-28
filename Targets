@@ -8,34 +8,14 @@ remark = Welcome to Kai Hendry's SmokePing website
 menu = Singapore
 title = Site we ping
 
-++ Thoughtworks
-title = Cross Street office
-menu = ThoughtworksSG
-host = 128.106.1.171
-
 ++ NUS
 title = NUS mirror
 host = mirror.nus.edu.sg
-
-++ Wireless
-title = rasping.local
-menu = Wireless Pi 3
-host = 192.168.1.36
 
 ++ Wired
 title = nuc
 menu = nuc
 host = 192.168.1.5
-
-++ WiredMBP
-title = mbp
-menu = hendry-tw-mbp
-host = 192.168.1.8
-
-++ OtherMBP
-title = sg-mbp
-menu = sg-mbp
-host = 192.168.1.9
 
 ++ Ndoo
 title = Andrew Yong's
@@ -54,10 +34,6 @@ host = s3.ap-southeast-1.amazonaws.com
 menu = Malaysia
 title = Malaysia Connectivity
 
-++ TM
-title = Petaling Jaya
-host = pj.dabase.com
-
 + UK
 menu = United Kingdom
 title = United Kingdom
@@ -65,10 +41,6 @@ title = United Kingdom
 ++ aa
 title = a&a
 host = ping.aa.net.uk
-
-++ webconverger
-title = gb.webconverger.com
-host = gb.webconverger.com
 
 ++ Praze
 menu = Praze
